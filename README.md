@@ -1,5 +1,5 @@
 # Site: 
-- https://cqen-qdce.github.io/test-jekyll-pages/
+- https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/
 
 ### Explication des dossiers
 - `_layouts` : fichiers html faisant office de template, un layout est le html qui englobe le contenu d'une page, plusieurs layouts peuvent être utilisés l'un dans l'autre
