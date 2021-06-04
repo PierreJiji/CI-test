@@ -191,6 +191,17 @@ pre {
   }
 }
 
+.horizontal-list{
+  list-style-type:none;
+  display: block;
+}
+
+ul.horizontal-list > li {
+  display: inline;
+  display: table-cell;
+  padding:2px;
+}
+
 
 
 /**
