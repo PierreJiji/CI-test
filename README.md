@@ -1,6 +1,11 @@
 # Site: 
 - https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/
 
+---
+Pour mettre à jour le submodule (contenu du site): 
+> git submodule update --remote 
+---
+
 ### Explication des dossiers
 - `_layouts` : fichiers html faisant office de template, un layout est le html qui englobe le contenu d'une page, plusieurs layouts peuvent être utilisés l'un dans l'autre
 - `_include` : layouts imbriqués dans ceux plus généraux dans - `_layouts` :
