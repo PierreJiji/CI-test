@@ -1,5 +1,6 @@
 <header class="site-header" role="banner">
 
+  <!--
   <a href="{{ "/" | relative_url }}">
     <img class="nav-logo" src="{{site.baseurl}}/assets/res_site/logo.ico">
   </a>
@@ -19,6 +20,69 @@
         <li>•</li>
         <li><a target="_blank" href="{{ "https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Ffromtb%3Dtrue%26hashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_d83036dc0b67a70f&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=jtSay0BHhccgFK9bPujO6T4MeOS33_6oLVMSWqcfjQc&code_challenge_method=SHA-256" | relative_url }}">AWS</a></li>
     </ul>
-  </div>
+  </div-->
+
+  <div class="contenu-fluide piv">
+    <div class="contenu-fixe">
+         <div class="ligne">
+            <div class="d-flex align-items-center">
+                    <a href="#contenu" class="visuallyHidden" tabindex="1">Passer au contenu</a>
+            </div>
+        </div>
+        <div class="ligne" id="entetePiv">
+            <div class="d-flex align-items-center zone1">
+                <a tabindex="5" href="{{ "/" | relative_url }}"><img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/res_site/piv/QUEBEC_blanc.svg" width="256" height="72"></a>
+                <!--<img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/res_site/piv//QUEBEC_couleur.svg" width="256" height="72"></a>-->
+            </div>
+            <div class="d-flex align-items-center zone2" lang="fr">
+                <div class="identite desktop" >{{ site.title | escape }}</div>
+            </div>
+            <div class="d-flex justify-content-end align-items-center zone3">
+                <a tabindex="10" id="lienOuvre" href="#recherchePiv">
+                    <img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/res_site/piv/recherche.svg" width="35" height="35">
+                    <!--<img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/res_site/piv//recherchen.svg" width="35" height="35">-->
+                </a>
+
+                <div class="zoneMenu">
+                    <div class="toggle_btn">
+                        <span></span>
+                    </div>
+                    <div class="menu_mobile nav">
+                        <div class="menu_mobile--site mobile">
+                            <!--Ajoutez votre menu. Vous pouvez le personnalisez par css.-->
+                            <!--Recherchez dans le css: .menu_mobile--site -->
+                            <a href="#">Accueil</a>
+                            <a href="#">Page 1</a>
+                            <a href="#">Page 2</a>
+                            <a href="#">Page 3</a>
+                        </div>
+                        <div class="menu_mobile--piv">
+                            <a href="#" lang="en" tabindex="20">English</a>
+                            <a href="#" tabindex="25">Nous joindre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="entetePiv--titreMobile">
+            <div class="titreM mobile">
+                <p>Programme d’identification visuelle
+                du gouvernement du Québec</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
   
 </header>
+
+<!--Script Menu Mobile-->
+<script>
+      var btn = document.querySelector('.toggle_btn');
+      var nav = document.querySelector('.nav');
+
+      btn.onclick = function() {
+          nav.classList.toggle('nav_open');
+          btn.classList.toggle('toggle_btn_open');
+      }
+</script>
