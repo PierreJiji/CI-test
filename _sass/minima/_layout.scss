@@ -2,10 +2,11 @@
  * Site header
  */
 .site-header {
-  border-bottom: 1px solid $grey-color-light;
-  display:flex;
-  flex-direction: row;
   align-items:center;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  z-index: 1000;
 }
 
 .nav-logo {
@@ -24,6 +25,21 @@
   &:visited {
     color: $grey-color-dark;
   }
+}
+
+.index-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  font-size:16px;
+  color: white;
+  position: absolute;
+  display: inline-block;
+  z-index: 10;
+  width: 50%;
+  background: none;
+  margin:auto;
+  top:40%;
+  left:10%;
 }
 
 .site-nav {
@@ -119,7 +135,6 @@
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
   padding: $spacing-unit 0;
 }
 
@@ -191,6 +206,17 @@
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
+  line-height: initial;
+  padding: $spacing-unit 0;
+  margin: $spacing-unit 0;
+  border-bottom: 1px solid $grey-color-light;
+  border-top: 1px solid $grey-color-light;
+}
+
+.particle-container{
+  height:100%;
+  width: 100%;
+  background-color: #095797;
 }
 
 .page-heading {

@@ -1,5 +1,4 @@
 <header class="site-header" role="banner">
-
   <!--
   <a href="{{ "/" | relative_url }}">
     <img class="nav-logo" src="{{site.baseurl}}/assets/res_site/logo.ico">
@@ -73,7 +72,21 @@
         
     </div>
 </div>
-  
+</header>
+<header>
+    <!--Header de particles-->
+    {%-if page.url == "/"-%}
+        <div class="index-title">
+            <h1>
+                {{site.title}}
+            </h1>
+        </div>
+        <!-- particles.js container --> 
+        <div id="particles-js"></div>
+        <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
+        <script>{%- include scripts/particles.js -%}</script>
+    {%- endif -%}
 </header>
 
 <!--Script Menu Mobile-->
