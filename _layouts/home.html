@@ -1,35 +1,59 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-<div class="home">
+  {%- include head.html -%}
 
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
+  <body>
 
-  {{ content }}
+    {%- include header.html -%}
+    {%- include particles.html -%}
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <br>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        <span class="post-meta">
-          {{ post.date | date: date_format }}
-          {{ post.excerpt }}
-        </span>
-      </li>
-      {%- endfor -%}
-    </ul>
+    <div class="index-description">
+      <h1> Commencez à innover dès maintenant! </h1>
+      <h3>
+        Ce portail est votre point d’entrée vers l’environnement d’innovation du CEAI. 
+        Choisissez parmi les services offerts ce qui correspond à ce que vous souhaitez réaliser. 
+      </h3>
+    </div>
+    
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <div class="home">
 
-  {%- endif -%}
+          {%- if page.title -%}
+            <h1 class="page-heading">{{ page.title }}</h1>
+          {%- endif -%}
+          {{ content }}
+        
+          <!--affichage de tous les posts-->
+          {%- if site.posts.size > 0 -%}
+            <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
+            <br>
+            <ul class="post-list">
+              {%- for post in site.posts -%}
+              <li>
+                {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+                <h3>
+                  <a class="post-link" href="{{ post.url | relative_url }}">
+                    {{ post.title | escape }}
+                  </a>
+                </h3>
+                <span class="post-meta">
+                  {{ post.date | date: date_format }}
+                  {{ post.excerpt }}
+                </span>
+              </li>
+              {%- endfor -%}
+            </ul>
+        
+          {%- endif -%}
+        
+        </div>
+      </div>
+    </main>
 
-</div>
+    {%- include footer.html -%}
+
+  </body>
+
+</html>

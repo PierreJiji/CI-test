@@ -1,26 +1,4 @@
 <header class="site-header" role="banner">
-  <!--
-  <a href="{{ "/" | relative_url }}">
-    <img class="nav-logo" src="{{site.baseurl}}/assets/res_site/logo.ico">
-  </a>
-
-  <div class="header-title">
-    <a class="site-title" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-        <div class="trigger">
-            {{ my_page.title | escape }}
-        </div>
-  </div>
-
-  <div class="nav-paths">
-    <ul class="horizontal-list nav-links">
-        <li><a href="{{ "/about" | relative_url }}">About</a></li>
-        <li>•</li>
-        <li><a target="_blank" href="{{ "https://console-openshift-console.apps.exp.lab.pocquebec.org/k8s/cluster/projects" }}">Openshift</a></li>
-        <li>•</li>
-        <li><a target="_blank" href="{{ "https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fconsole.aws.amazon.com%2Fconsole%2Fhome%3Ffromtb%3Dtrue%26hashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_d83036dc0b67a70f&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=jtSay0BHhccgFK9bPujO6T4MeOS33_6oLVMSWqcfjQc&code_challenge_method=SHA-256" | relative_url }}">AWS</a></li>
-    </ul>
-  </div-->
-
   <div class="contenu-fluide piv">
     <div class="contenu-fixe">
          <div class="ligne">
@@ -30,16 +8,16 @@
         </div>
         <div class="ligne" id="entetePiv">
             <div class="d-flex align-items-center zone1">
-                <a tabindex="5" href="{{ "/" | relative_url }}"><img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/res_site/piv/QUEBEC_blanc.svg" width="256" height="72"></a>
-                <!--<img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/res_site/piv//QUEBEC_couleur.svg" width="256" height="72"></a>-->
+                <a tabindex="5" href="{{ "/" | relative_url }}"><img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/piv/QUEBEC_blanc.svg" width="256" height="72"></a>
+                <!--<img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/piv//QUEBEC_couleur.svg" width="256" height="72"></a>-->
             </div>
             <div class="d-flex align-items-center zone2" lang="fr">
                 <div class="identite desktop" >{{ site.title | escape }}</div>
             </div>
             <div class="d-flex justify-content-end align-items-center zone3">
                 <a tabindex="10" id="lienOuvre" href="#recherchePiv">
-                    <img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/res_site/piv/recherche.svg" width="35" height="35">
-                    <!--<img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/res_site/piv//recherchen.svg" width="35" height="35">-->
+                    <img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/piv/recherche.svg" width="35" height="35">
+                    <!--<img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/piv//recherchen.svg" width="35" height="35">-->
                 </a>
 
                 <div class="zoneMenu">
@@ -72,21 +50,6 @@
         
     </div>
 </div>
-</header>
-<header>
-    <!--Header de particles-->
-    {%-if page.url == "/"-%}
-        <div class="index-title">
-            <h1>
-                {{site.title}}
-            </h1>
-        </div>
-        <!-- particles.js container --> 
-        <div id="particles-js"></div>
-        <!-- particles.js lib - https://github.com/VincentGarreau/particles.js --> 
-        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> 
-        <script>{%- include scripts/particles.js -%}</script>
-    {%- endif -%}
 </header>
 
 <!--Script Menu Mobile-->
