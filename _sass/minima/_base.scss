@@ -280,3 +280,10 @@ table {
     border: 1px solid $grey-color-light;
   }
 }
+
+/**
+ * Animations
+ */
+
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }

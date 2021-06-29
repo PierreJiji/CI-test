@@ -14,15 +14,19 @@
         Ce portail est votre point d’entrée vers l’environnement d’innovation du CEAI. 
         Choisissez parmi les services offerts ce qui correspond à ce que vous souhaitez réaliser. 
       </h3>
+      <div class="portal-container">
+          <div class="portal-cell grow">
+            <img class="portal-img" src="{{site.baseurl}}/assets/amazon-web-services.svg">
+            Console AWS
+          </div>
+          <div class="portal-cell grow">
+            <img class="portal-img" src="{{site.baseurl}}/assets/openshift.svg">
+            Portail Openshift
+          </div>
+      </div>
     </div>
     <div class="div-page">
-      <div class="sidebar-column">
-        <h3>Liens de navigation</h3>
-        <ul>
-          <li><a href="{{site.baseurl}}/documentation">Documentation</a></li>
-          <li><a href="{{site.baseurl}}/about">About</a></li>
-        </ul>
-      </div>
+      <!--{%- include sidebar-column.html -%}-->
       <main class="page-content" aria-label="Content">
         {{ content }}
 
@@ -36,7 +40,10 @@
               <h1>Démarrer une expérimentation</h1>
               Vous voulez démarrer une expérimentation? Vous cherchez par où commencer? 
               Le CEAI vous permet de démarrer rapidement un laboratoire avec tous les 
-              environnements, toutes les infrastructures et tout l’accompagnement dont vous aurez besoin. 
+              environnements, toutes les infrastructures et tout l’accompagnement dont vous aurez besoin.
+              <ul>
+                <li><a href="#">Vous voulez faire une expérimentation?</a></li>
+              </ul>
             </span>
           </div>
 
@@ -45,6 +52,9 @@
               <h1>Coffre à outils</h1>
               Vous savez ce que vous voulez faire. Ce que vous cherchez, ce sont les outils pour le faire. 
               Le CEAI vous offre un coffre à outils simple et efficace vous permettant de réaliser vos expérimentations. 
+              <ul>
+                <li><a href="#">Le coffre à outils du CEAI</a></li>
+              </ul>
             </span>
             <div class="icon-container">
               <i class="fas fa-toolbox"></i>
@@ -61,10 +71,10 @@
               Les services spécialisés offerts par le CEAI vous permettent de 
               perfectionner vos connaissances en :
               <ul>
-                <li>Intelligence artificielle </li>
-                <li>Chaine de blocs</li>
-                <li>Logiciel libre</li>
-                <li>API </li>
+                <li><a href="#">Intelligence artificielle</a></li>
+                <li><a href="#">Chaine de blocs</a></li>
+                <li><a href="#">Logiciel libre</a></li>
+                <li><a href="#">API</a></li>
               </ul>
             </span>
           </div>
@@ -78,6 +88,10 @@
               Toutes des questions que vous vous poserez à un moment ou à un autre. 
               Le CEAI veut vous simplifier la vie en vous offrant une documentation 
               et une expertise de manière simple et efficace. 
+              <ul>
+                <li><a href="{{site.baseurl}}/documentation">Documentation</a></li>
+                <li><a href="#">Centre de dépannage</a></li>
+              </ul>
             </span>
             <div class="icon-container">
               <i class="fas fa-handshake"></i>
@@ -94,6 +108,9 @@
               sur les travaux de nos pairs et de les faire évoluer. 
               Vous pouvez consulter les divers laboratoires qui ont 
               été réalisés dans l’environnement d’innovation du CEAI et vous en inspirer. 
+              <ul>
+                <li><a href="#">Index des laboratoires </a></li></li>
+              </ul>
             </span>
           </div>
 

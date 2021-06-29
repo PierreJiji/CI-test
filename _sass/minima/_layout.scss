@@ -31,7 +31,9 @@ $home-icon-color:#0957979c;
     color: $grey-color-dark;
   }
 }
-
+/**
+ * Universal content
+**/
 .div-page {
   display: flex;
   flex-flow: row;
@@ -42,7 +44,7 @@ $home-icon-color:#0957979c;
   flex: 0;
   width: 20%;
   padding: 2% 5% 5% 3%;
-  background-color: rgb(66, 66, 66);
+  background-color: #252f3e;
   color: #9b9b9b;
   font-size: 1.25em;
 
@@ -50,16 +52,39 @@ $home-icon-color:#0957979c;
     list-style-type:none;
     margin:0;
   }
+  a {
+    color:#7289d9;
+  }
+}
+$content-width: 75vw;
+
+.home-wrapper {
+  max-width: -webkit-calc(#{$content-width});
+  max-width:         calc(#{$content-width});
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
 }
 
+
 .home-container {
-  @extend .wrapper;
+  @extend .home-wrapper;
   display:flex;
   flex-direction: column;
   align-items: center;
 }
 
 .row-container {
+  @extend .grow;
   margin: 20px 0px 20px 0px;
   display:flex;
   flex-direction: row;
@@ -69,6 +94,11 @@ $home-icon-color:#0957979c;
   padding:5px;
   justify-content: space-between;
   min-height: 200px;
+  ul {
+    list-style-type: none;
+    margin: 10px;
+    text-decoration: none;
+  }
 }
 
 .icon-container {
@@ -81,10 +111,12 @@ $home-icon-color:#0957979c;
 }
 
 .text-container-right {
+  text-align: left;
   margin: 0px 10px 10px 10px;
 }
 
 .text-container-left {
+  text-align: right;
   margin: 10px 10px 10px 20px;
 }
 
@@ -95,18 +127,38 @@ $home-icon-color:#0957979c;
   color:white;
 }
 
+.portal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.portal-cell {
+  height: 250px;
+  width: 250px;
+  text-align: center;
+}
+.portal-img {
+  display:block;
+  width: 200px;
+  height: 200px;
+  margin:auto;
+  margin-bottom: 10px;
+}
+.title-container {
+  display:grid;
+  max-height: 1200px;
+}
+
 .index-title {
+  grid-area: 1 / 1;
   font-family: 'Roboto', sans-serif;
   font-size: 25px;
   color: white;
-  position: absolute;
-  display: inline-block;
   z-index: 10;
   width: 50%;
   background: none;
-  margin:auto;
-  top:30%;
-  left:10%;
+  margin: 5% 5% 5% 15%;
 }
 
 .site-nav {
@@ -271,6 +323,7 @@ $home-icon-color:#0957979c;
  * Page content
  */
 .page-content {
+  min-height: 100vh;
   padding: $spacing-unit 0;
   flex: 1;
   line-height: initial;
