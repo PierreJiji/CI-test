@@ -45,9 +45,9 @@ $on-laptop:        800px !default;
 
 // Import partials.
 @import
+  "piv/styles.scss",
   "minima/base",
   "minima/layout",
   "minima/syntax-highlighting",
-  "minima/particles",
-  "piv/styles.scss"
+  "minima/particles"
 ;

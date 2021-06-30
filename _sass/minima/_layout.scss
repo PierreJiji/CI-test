@@ -35,18 +35,33 @@ $home-icon-color:#0957979c;
  * Universal content
 **/
 .div-page {
+  width: 100%;
   display: flex;
   flex-flow: row;
   height: 100%;
 }
 
+.page-container {
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+  @media screen and (max-width: $desktop) {
+    width: 90%;
+  }
+}
+
 .sidebar-column {
   flex: 0;
-  width: 20%;
+  min-width:120px;
+  width: 10%;
   padding: 2% 5% 5% 3%;
   background-color: #252f3e;
   color: #9b9b9b;
   font-size: 1.25em;
+
+  @media screen and (max-width: $desktop) {
+    display:none;
+  }
 
   ul {
     list-style-type:none;
@@ -322,14 +337,19 @@ $content-width: 75vw;
 /**
  * Page content
  */
+#breadcrumbs {
+  margin: 20px;
+  display: block;
+}
+
 .page-content {
+  max-width: 100%;
   min-height: 100vh;
-  padding: $spacing-unit 0;
+  padding-bottom: $spacing-unit;
   flex: 1;
   line-height: initial;
-  padding: $spacing-unit 0;
-  border-bottom: 1px solid $grey-color-light;
   border-top: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-light; 
 }
 
 .particle-container{
@@ -371,7 +391,7 @@ $content-width: 75vw;
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 0.75;
 }
 
 .post-title {

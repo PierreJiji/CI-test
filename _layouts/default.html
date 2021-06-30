@@ -9,11 +9,14 @@
 
     <div class="div-page">
       {%- include sidebar-column.html -%}
-      <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
+      <div class="page-container">      
+        {%- include breadcrumbs.html -%}
+        <main class="page-content" aria-label="Content">
+          <div class="wrapper">
+            {{ content }}
+          </div>
+        </main>
       </div>
-    </main>
     </div>
 
     {%- include footer.html -%}

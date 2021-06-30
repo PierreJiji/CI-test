@@ -24,13 +24,23 @@ description: >-
 
 baseurl: "/plateforme-accueil-centre-innovation" # the subpath of your site, e.g. /blog
 url: "https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/" # the base hostname & protocol for your site, e.g. http://example.com
-
+permalink: none
 
 # Build settings
 
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+
+# Default settings for the posts
+defaults:
+  - scope:
+      path: "plateforme-accueil-contenu/_posts"
+      type: posts
+    values:
+      permalink: documentation/:title
+      layout: post
+      categories: documentation
 
 # Exclude from processing.
 # The following items will not be processed, by default.
