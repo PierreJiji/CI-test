@@ -181,8 +181,8 @@ pre {
 .wrapper {
   max-width: -webkit-calc(#{$content-width});
   max-width:         calc(#{$content-width});
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 10%;
+  margin-left: 10%;
   @extend %clearfix;
 
   @include media-query($on-laptop) {
