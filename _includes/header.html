@@ -1,30 +1,63 @@
 <header class="site-header" role="banner">
-
-  <div class="wrapper">
-    {%- assign default_paths = site.pages | map: "path" -%}
-    {%- assign page_paths = site.header_pages | default: default_paths -%}
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
-
-    {%- if page_paths -%}
-      <nav class="site-nav">
-        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
-        <label for="nav-trigger">
-          <span class="menu-icon">
-            <svg viewBox="0 0 18 15" width="18px" height="15px">
-              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
-            </svg>
-          </span>
-        </label>
-
-        <div class="trigger">
-          {%- for path in page_paths -%}
-            {%- assign my_page = site.pages | where: "path", path | first -%}
-            {%- if my_page.title -%}
-            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
-            {%- endif -%}
-          {%- endfor -%}
+  <div class="contenu-fluide piv">
+    <div class="contenu-fixe">
+         <div class="ligne">
+            <div class="d-flex align-items-center">
+                    <a href="#contenu" class="visuallyHidden" tabindex="1">Passer au contenu</a>
+            </div>
         </div>
-      </nav>
-    {%- endif -%}
-  </div>
+        <div class="ligne" id="entetePiv">
+            <div class="d-flex align-items-center zone1">
+                <a tabindex="5" href="{{ "/" | relative_url }}"><img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/piv/QUEBEC_blanc.svg" width="256" height="72"></a>
+                <!--<img id="pivImage" alt="Logo du gouvernement du Québec." src="{{site.baseurl}}/assets/piv//QUEBEC_couleur.svg" width="256" height="72"></a>-->
+            </div>
+            <div class="d-flex align-items-center zone2" lang="fr">
+                <div class="identite desktop" >{{ site.title | escape }}</div>
+            </div>
+            <div class="d-flex justify-content-end align-items-center zone3">
+                <a tabindex="10" id="lienOuvre" href="#recherchePiv">
+                    <img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/piv/recherche.svg" width="35" height="35">
+                    <!--<img class="loupeRecherche" id="lienOuvreImage" alt="Bouton pour ouvrir la recherche." src="{{site.baseurl}}/assets/piv//recherchen.svg" width="35" height="35">-->
+                </a>
+
+                <div class="zoneMenu">
+                    <div class="toggle_btn">
+                        <span></span>
+                    </div>
+                    <div class="menu_mobile nav">
+                        <div class="menu_mobile--site mobile">
+                            <!--Ajoutez votre menu. Vous pouvez le personnalisez par css.-->
+                            <!--Recherchez dans le css: .menu_mobile--site -->
+                            <a href="#">Accueil</a>
+                            <a href="#">Page 1</a>
+                            <a href="#">Page 2</a>
+                            <a href="#">Page 3</a>
+                        </div>
+                        <div class="menu_mobile--piv">
+                            <a href="#" lang="en" tabindex="20">English</a>
+                            <a href="#" tabindex="25">Nous joindre</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="entetePiv--titreMobile">
+            <div class="titreM mobile">
+                <p>{{site.title}}</p>
+            </div>
+        </div>
+        
+    </div>
+</div>
 </header>
+
+<!--Script Menu Mobile-->
+<script>
+      var btn = document.querySelector('.toggle_btn');
+      var nav = document.querySelector('.nav');
+
+      btn.onclick = function() {
+          nav.classList.toggle('nav_open');
+          btn.classList.toggle('toggle_btn_open');
+      }
+</script>

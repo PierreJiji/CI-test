@@ -1,13 +1,22 @@
 /**
+ *  variables
+ */
+$home-icon-color:#0957979c;
+
+/**
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
-  min-height: $spacing-unit * 1.865;
+  align-items:center;
+  position: -webkit-sticky;
+  position: sticky;
+  top:0;
+  z-index: 1000;
+}
 
-  // Positioning context for the mobile navigation icon
-  position: relative;
+.nav-logo {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .site-title {
@@ -16,12 +25,159 @@
   line-height: $base-line-height * $base-font-size * 2.25;
   letter-spacing: -1px;
   margin-bottom: 0;
-  float: left;
 
   &,
   &:visited {
     color: $grey-color-dark;
   }
+}
+/**
+ * Universal content
+**/
+.div-page {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  height: 100%;
+}
+
+.page-container {
+  width:100%;
+}
+
+.post {
+  width:100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  @media screen and (max-width: $desktop) {
+    width: 90%;
+  }
+}
+
+.sidebar-column {
+  flex: 0;
+  min-width:120px;
+  width: 10%;
+  padding: 2% 5% 5% 3%;
+  background-color: #252f3e;
+  color: #9b9b9b;
+  font-size: 1.25em;
+
+  @media screen and (max-width: $desktop) {
+    display:none;
+  }
+
+  ul {
+    list-style-type:none;
+    margin:0;
+  }
+  a {
+    color:#7289d9;
+  }
+}
+$content-width: 75vw;
+
+.home-wrapper {
+  max-width: -webkit-calc(#{$content-width});
+  max-width:         calc(#{$content-width});
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+
+.home-container {
+  @extend .home-wrapper;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-container {
+  @extend .grow;
+  margin: 20px 0px 20px 0px;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  border: solid $home-icon-color 4px;
+  border-radius: 15px;
+  padding:5px;
+  justify-content: space-between;
+  min-height: 200px;
+  ul {
+    list-style-type: none;
+    margin: 15px;
+    text-decoration: none;
+  }
+}
+
+.icon-container {
+  display:block;
+  width:7vw;
+  margin:5%;
+  font-size: 7vw;
+  text-align: center;
+  color:$home-icon-color;
+}
+
+.text-container-right {
+  text-align: left;
+  margin: 0px 10px 10px 10px;
+}
+
+.text-container-left {
+  text-align: right;
+  margin: 10px 10px 10px 20px;
+}
+
+
+.index-description {
+  padding: 2em;
+  background-color: #325da8;
+  color:white;
+}
+
+.portal-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+}
+
+.portal-cell {
+  height: 250px;
+  width: 250px;
+  text-align: center;
+}
+.portal-img {
+  display:block;
+  width: 200px;
+  height: 200px;
+  margin:auto;
+  margin-bottom: 10px;
+}
+.title-container {
+  display:grid;
+  max-height: 1200px;
+}
+
+.index-title {
+  grid-area: 1 / 1;
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+  color: white;
+  z-index: 10;
+  width: 50%;
+  background: none;
+  margin: 5% 5% 5% 15%;
 }
 
 .site-nav {
@@ -100,14 +256,24 @@
   }
 }
 
+.nav-paths {
+  display: block;
+  flex-grow: 1;
+}
+
+.nav-links {
+  float:right;
+  margin:0;
+  margin-right:5px;
+}
+
 
 
 /**
  * Site footer
  */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
-  padding: $spacing-unit 0;
+  padding: 35px 0;
 }
 
 .footer-heading {
@@ -175,9 +341,25 @@
 /**
  * Page content
  */
+#breadcrumbs {
+  margin: 20px;
+  display: block;
+}
+
 .page-content {
-  padding: $spacing-unit 0;
+  max-width: 100%;
+  min-height: 100vh;
+  padding-bottom: $spacing-unit;
   flex: 1;
+  line-height: initial;
+  border-top: 1px solid $grey-color-light;
+  border-bottom: 1px solid $grey-color-light; 
+}
+
+.particle-container{
+  height:100%;
+  width: 100%;
+  background-color: #095797;
 }
 
 .page-heading {
@@ -213,7 +395,7 @@
  * Posts
  */
 .post-header {
-  margin-bottom: $spacing-unit;
+  margin-bottom: $spacing-unit * 0.75;
 }
 
 .post-title {
@@ -228,6 +410,9 @@
 
 .post-content {
   margin-bottom: $spacing-unit;
+  h1 {
+    @include relative-font-size(2.25)
+  }
 
   h2 {
     @include relative-font-size(2);

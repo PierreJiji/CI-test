@@ -1,0 +1,4 @@
+[submodule "plateforme-accueil-contenu"]
+	path = plateforme-accueil-contenu
+	url = https://github.com/CQEN-QDCE/plateforme-accueil-contenu.git
+	branch = master

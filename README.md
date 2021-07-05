@@ -1,6 +1,17 @@
 # Site: 
 - https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/
 
+### Pour héberger le site localement:
+1. Cloner le projet.
+2. Faire la commande `git submodule init` pour initialiser le submodule dans votre répertoire local, puis `git submodule update` pour pull la dernière version du submodule.
+3. Avoir ruby v2.4.0 ou + installé sur votre poste et faire la commande ```gem install jekyll bundler```.
+4. Faire la commande ```bundle exec jekyll server``` à la racine du site.
+
+### Pour mettre à jour le submodule (contenu du site): 
+```bash
+git submodule update --remote
+``` 
+
 ### Explication des dossiers
 - `_layouts` : fichiers html faisant office de template, un layout est le html qui englobe le contenu d'une page, plusieurs layouts peuvent être utilisés l'un dans l'autre
 - `_include` : layouts imbriqués dans ceux plus généraux dans - `_layouts` :
@@ -9,6 +20,3 @@
 - `.github/workflow` : contient les paramètres de build pour github pages, notamment quel token utiliser
 - `assets` : (à vérifier) contient les contenus multimédia du site ainsi que les feuilles de style utilisées, le css généré par le css se retrouvera dans ce dossier lors du build
 - `_site` : (généré lors d'un push) site résultant du build
-
-#### À noter:
-Il n'est pas nécéssaire d'inclure les fichiers du thème pour qu'ils soit loadés lors du build, tant que les attributs `baseurl:` et `url:` sont valide, j'ai cependant inclu les fichiers originaux du thème pour voir la structure complète du site qui est pris en compte par le builder et expérimenter. 
