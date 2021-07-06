@@ -32,6 +32,9 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+include:
+  - _pages
+
 # Default settings for the posts
 defaults:
   - scope:
@@ -64,9 +67,6 @@ defaults:
 exclude:
   - Dockerfile
   - README.md
-
-include:
-  - _pages
 
 kramdown:
   input: GFM
