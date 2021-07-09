@@ -5,17 +5,26 @@ layout: default
 {{content}}
 <br><br>
 <div class="portal-container">
-  <a href="#">
-    <div class="portal-cell grow">
+  <div class="portal-cell grow">
+    <a href="#">
       <img class="portal-img" src="{{site.baseurl}}/assets/amazon-web-services.svg">
-      Console AWS
+    </a>
+    <button type="button" class="collapsible">Console AWS</button>
+    <div class="content">
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.</p>
     </div>
-  </a>
-  <a href="#">
-    <div class="portal-cell grow">
+  </div>
+  <div class="portal-cell grow">
+    <a href="#">
       <img class="portal-img" src="{{site.baseurl}}/assets/openshift.svg">
-      Portail Openshift
+    </a>
+    <button type="button" class="collapsible">Portail Openshift</button>
+    <div class="content">
+      <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+        incididunt ut labore et dolore magna aliqua.</p>
     </div>
-  </a>
+  </div>
 </div>
 </div>
+<script src="{{site.baseurl}}/assets/scripts/collapsible.js"></script>
