@@ -32,18 +32,22 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-include:
-  - _pages
-
 # Default settings for the posts
 defaults:
   - scope:
-      path: "plateforme-accueil-contenu/_posts"
+      path: "_posts/plateforme-accueil-contenu"
       type: posts
     values:
       permalink: documentation/:title
       layout: post
       categories: documentation
+  - scope:
+      path: "documentation-labs"
+      type: posts
+    values:
+      permalink: documentation/:title
+      layout: post
+      categories: documentation-labs
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -67,6 +71,9 @@ defaults:
 exclude:
   - Dockerfile
   - README.md
+
+include:
+  - _pages
 
 kramdown:
   input: GFM

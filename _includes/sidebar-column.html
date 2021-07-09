@@ -26,7 +26,7 @@
     {% for apage in sortedpages %}
         {% unless forloop.first %} <!-- the first split element is empty-->
             {% assign postitems = apage | split: '#' %}
-            <a href={{ postitems[1] }}>{{ postitems[0] }}</a><br>
+            <p><a href={{ postitems[1] }}>{{ postitems[0] }}</a></p>
         {% endunless %}
     {% endfor %}
     </ul>
