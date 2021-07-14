@@ -41,13 +41,11 @@ defaults:
       permalink: documentation/:title
       layout: post
       categories: documentation
-  - scope:
-      path: "documentation-labs"
-      type: posts
-    values:
-      permalink: documentation/:title
-      layout: post
-      categories: documentation-labs
+
+collections:
+  documentation-labs:
+    output: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -74,6 +72,5 @@ exclude:
 
 include:
   - _pages
-
 kramdown:
   input: GFM

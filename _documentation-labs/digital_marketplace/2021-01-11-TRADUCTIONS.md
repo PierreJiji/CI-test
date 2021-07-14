@@ -1,3 +1,11 @@
+---
+date: 2021-01-11T15:45:41-05:00
+permalink: documentation-labs/digital_marketplace/:title
+layout: post
+type: posts
+project: digital_marketplace
+index: false
+---
 # Module de traduction
 
 ## Objectifs
