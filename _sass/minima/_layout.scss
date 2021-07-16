@@ -49,8 +49,6 @@ $home-text-color: #072b49;
 
 .post {
   width:100%;
-  margin-left: 10%;
-  margin-right: 10%;
   @media screen and (max-width: $desktop) {
     width: 90%;
   }
@@ -465,7 +463,7 @@ a.row-container {
   border: none;
   text-align: center;
   outline: none;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .collapsible:after {
@@ -473,7 +471,7 @@ a.row-container {
   margin: 0;
   transform: rotate(90deg);
   height: 1em;
-  font-size: 1.5em;
+  font-size: 1.25em;
   float: right;
 }
 
