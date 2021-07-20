@@ -1,6 +1,5 @@
 ---
 date: 2021-07-09T19:13:13Z
-
 permalink: documentation-labs/digital_marketplace/:title
 layout: post
 type: posts
