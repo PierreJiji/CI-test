@@ -15,8 +15,8 @@ def main
         repoName = (content["url"].split("/")[-1]).split(".")[0] 
 
         # Deletes current site folder if it existed
-        system("rm -rf ../_documentation-labs/#{repoName}")
-        system("mkdir ../_documentation-labs/#{repoName}")
+        system("rm -rf ../../_documentation-labs/#{repoName}")
+        system("mkdir ../../_documentation-labs/#{repoName}")
 
         # Git clone the whole project
         system("rm -rf #{repoName}")

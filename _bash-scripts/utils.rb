@@ -24,7 +24,7 @@ def file_prepend(path, date, repoName)
 end
 
 # Creates an index for the project, which will list and reference the different docs of the project
-def create_index(path, repoName, projectTitle)
+def create_index(path, repoName, projectTitle, url)
     str = 
     "---\n" +
     "title: #{projectTitle}\n" +
@@ -32,6 +32,7 @@ def create_index(path, repoName, projectTitle)
     "project: #{repoName}\n" +
     "permalink: documentation-labs/#{repoName.gsub(' ', '-')}/\n" +
     "index: true\n" +
+    "url: #{url}"
     "---"
     File.open(path + "/index.md", 'w') {|f| f.write(str) }
 end
