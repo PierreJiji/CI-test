@@ -32,12 +32,12 @@ def create_index(path, repoName, projectTitle, url)
     "project: #{repoName}\n" +
     "permalink: documentation-labs/#{repoName.gsub(' ', '-')}/\n" +
     "index: true\n" +
-    "url: #{url}"
+    "url: #{url}\n" +
     "---"
     File.open(path + "/index.md", 'w') {|f| f.write(str) }
 end
 
 def waitForInput
   puts("Waiting for input:")
-  return gets.chomp.upcase
+  gets.chomp.upcase
 end

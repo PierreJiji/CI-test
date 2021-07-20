@@ -48,7 +48,7 @@ def main
                 raw = path.gsub("github.com", "raw.githubusercontent.com").gsub("/blob/", "/") # Gets raw file from normal url
                 system("wget \"#{raw}\"")
                 if (!$?.success?)
-                    raise "Impossible to wget file from #{path}"
+                    raise "Impossible to wget file from #{path}, check if path provided is valid.\n"
                 end
                 file_prepend("#{fileName}", dateIso, "#{repoName}")
                 system("mv #{fileName} ../_documentation-labs/#{repoName}/#{dateShort}-#{fileName}")
