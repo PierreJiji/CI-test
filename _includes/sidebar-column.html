@@ -1,33 +1,6 @@
-<!--
-  --  The following code automatically takes all the pages of the site 
-  --  and lists them in the side bar column with a link to their relative url.
-  --  The html liquid code has been borrowed and adapted from this stack overflow thread:
-  --      https://stackoverflow.com/questions/8991995/using-liquid-to-sort-posts-alphabetically
-  -->
-
-{% capture pages %}
-  {% for apage in site.pages %}
-    {%- if apage.short-title -%}
-    |{{ apage.short-title }}#{{ apage.url | relative_url }}
-    {%-endif-%}
-  {% endfor %}
-{% endcapture %}
-{% assign sortedpages = pages | split: '|' | sort %}
-
-{% for apage in site.pages %}
-{%- if apage.short-title -%}
-{{short-title}}
-{%-endif-%}
-{% endfor %}
-
 <div class="sidebar-column">
-    <h3>Liens de navigation</h3>
-    <ul>
-    {% for apage in sortedpages %}
-        {% unless forloop.first %} <!-- the first split element is empty-->
-            {% assign postitems = apage | split: '#' %}
-            <p><a href={{ postitems[1] }}>{{ postitems[0] }}</a></p>
-        {% endunless %}
-    {% endfor %}
-    </ul>
+  <h3>Liens de navigation</h3>
+  <ul>
+      {%- include list-items.html -%}
+  </ul>
 </div>

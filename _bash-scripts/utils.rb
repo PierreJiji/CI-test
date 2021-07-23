@@ -2,7 +2,7 @@
 
 # Prepends a jekyll header to a file by replacing the file 
 # (loops through each line to not load all of the file into memory at the same time)
-def file_prepend(path, date, repoName)
+def file_prepend(path, date, repoName, url)
     new_contents = ""
     str = 
     "---\n" +
@@ -11,6 +11,7 @@ def file_prepend(path, date, repoName)
     "layout: post\n" +
     "type: posts\n" +
     "project: #{repoName}\n" +
+    "github: #{url}\n" +
     "index: false\n" +
     "---\n"
     File.open(path, 'r') do |fd|
@@ -24,7 +25,7 @@ def file_prepend(path, date, repoName)
 end
 
 # Creates an index for the project, which will list and reference the different docs of the project
-def create_index(path, repoName, projectTitle, url)
+def create_index(path, repoName, projectTitle, url, description)
     str = 
     "---\n" +
     "title: #{projectTitle}\n" +
@@ -32,8 +33,10 @@ def create_index(path, repoName, projectTitle, url)
     "project: #{repoName}\n" +
     "permalink: documentation-labs/#{repoName.gsub(' ', '-')}/\n" +
     "index: true\n" +
-    "url: #{url}\n" +
-    "---"
+    "github: #{url}\n" +
+    "---\n" +
+    description
+    
     File.open(path + "/index.md", 'w') {|f| f.write(str) }
 end
 

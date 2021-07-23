@@ -389,6 +389,9 @@ a.row-container {
   > li {
     margin-bottom: $spacing-unit;
   }
+  > li > h3 {
+    margin-top: 0;
+  }
 }
 
 .post-meta {
@@ -492,4 +495,13 @@ a.row-container {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
+}
+
+.github-icon {
+  font-size: 1.5em;
+  color: $grey-color;
+}
+
+.github-icon:hover {
+  color: $text-color;
 }
