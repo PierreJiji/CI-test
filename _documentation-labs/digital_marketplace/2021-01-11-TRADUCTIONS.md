@@ -59,7 +59,9 @@ index: false
 | Sauvegarder les préférences linguistiques de l'utilisateur <sup>[1](#localstorage)</sup> | ✓ |
 | Traduire du texte côté serveur | ✓ |
 | Sauvegarder les préférences linguistiques d'un utilisateur dans le SGBD | ✓ |
+
 ---
+
 <a name="localstorage">1</a>: Les préférences sont enregistrées dans le stockage local du navigateur de l'utilisateur.
 
 ## Analyse
