@@ -397,6 +397,9 @@ a.row-container {
 .post-meta {
   font-size: $small-font-size;
   color: $grey-color;
+  a {
+    color: inherit;
+  }
 }
 
 .post-link {
