@@ -4,7 +4,7 @@ permalink: documentation-labs/digital_marketplace/:title
 layout: post
 type: posts
 project: digital_marketplace
-github: https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/D%C3%A9couverte/Exp%C3%A9rimentations/TRADUCTIONS.md
+github: https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/Découverte/Expérimentations/TRADUCTIONS.md
 index: false
 ---
 # Module de traduction
@@ -59,9 +59,7 @@ index: false
 | Sauvegarder les préférences linguistiques de l'utilisateur <sup>[1](#localstorage)</sup> | ✓ |
 | Traduire du texte côté serveur | ✓ |
 | Sauvegarder les préférences linguistiques d'un utilisateur dans le SGBD | ✓ |
-
 ---
-
 <a name="localstorage">1</a>: Les préférences sont enregistrées dans le stockage local du navigateur de l'utilisateur.
 
 ## Analyse
