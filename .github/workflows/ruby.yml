@@ -24,7 +24,7 @@ jobs:
           ruby-version: head
       - name: Install dependencies
         run: bundle install
-      - name: Run tests
+      - name: Run tests 
         run: bundle exec rake
       - run: cd _bash-scripts
       - run: ruby populate-graphql.rb --secret ${{ secrets.API_TOKEN }}
