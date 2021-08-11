@@ -71,8 +71,10 @@ GEM
 PLATFORMS
   ruby
   x86_64-linux
+  x86_64-linux-musl
 
 DEPENDENCIES
+  addressable (>= 2.8.0)
   colorize (~> 0.8.1)
   graphql (~> 1.12.14)
   jekyll (~> 4.2.0)

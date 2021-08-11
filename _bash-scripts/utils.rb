@@ -49,27 +49,28 @@ end
 # Checks if secret exist and if not prompts the user to enter one
 # Returns the fetched secret
 def check_secret
-  secret = "" # Put your own secret here
-  index = ARGV.find_index("--secret")
+  secret = strVar = File.open('secret') {|f| f.readline}
+  secret = secret.delete("\n")
+  # index = ARGV.find_index("--secret")
 
-  if (index && argvs[index+1]) # --secret 12345
-    secret = argvs[index+1].delete("\n")
-    # export GITHUB_SECRET=secret
-    puts "Secret successfully updated".green
+  # if (index && argvs[index+1]) # --secret 12345
+  #   secret = argvs[index+1].delete("\n")
+  #   # export GITHUB_SECRET=secret
+  #   puts "Secret successfully updated".green
 
-  elsif (index && !argvs[index+1]) # --secret
-    puts "Please respect the syntax of --secret <your_secret>".red
-    abort
+  # elsif (index && !argvs[index+1]) # --secret
+  #   puts "Please respect the syntax of --secret <your_secret>".red
+  #   abort
 
-  elsif (secret=="") # no arguments but missing api key
-    puts "You do not have a github secret key set, please paste your github API key here: ".yellow
-    argvCopy = ARGV.map(&:clone)
-    ARGV.clear # needs to be cleared to be able to use get.chomp
-    secret = gets.chomp.delete("\n")
-    # export GITHUB_SECRET=secret
-    ARGV.replace argvCopy # reset args
-    puts "Secret set! You can always set a new github API key by calling this script with the --secret <your_token> argument".green
-  end
-  puts secret
+  # elsif (secret=="") # no arguments but missing api key
+  #   puts "You do not have a github secret key set, please paste your github API key here: ".yellow
+  #   argvCopy = ARGV.map(&:clone)
+  #   ARGV.clear # needs to be cleared to be able to use get.chomp
+  #   secret = gets.chomp.delete("\n")
+  #   # export GITHUB_SECRET=secret
+  #   ARGV.replace argvCopy # reset args
+  #   puts "Secret set! You can always set a new github API key by calling this script with the --secret <your_token> argument".green
+  # end
+  # puts secret
   return secret
 end
