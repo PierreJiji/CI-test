@@ -52,12 +52,16 @@ def check_secret
   index = ARGV.find_index("--secret")
 
   if (index && ARGV[index+1]) # --secret 12345
+    puts "Using secret from provided argument".cyan
     secret = ARGV[index+1].delete("\n")
-    puts "Using secret #{secret}".cyan
 
   elsif (index && !ARGV[index+1]) # --secret
-    puts "Please respect the syntax of --secret <your_secret>".red
+    puts "Please respect the argument syntax of --secret <your_secret>".red
     abort
+  
+  elsif (ENV["API_TOKEN"])
+    puts "Using secret from environment variable".cyan
+    secret = ENV["API_TOKEN"]
 
   else # no arguments
     puts "Fetching API key from local files...".yellow
