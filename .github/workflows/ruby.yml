@@ -2,27 +2,29 @@
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
 # documentation.
-# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
-# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
 
 name: Ruby
 
 on:
   push:
-    branches: [ workflow-test ]
+    branches: [ worflow-test ]
   pull_request:
-    branches: [ workflow-test ]
+    branches: [ worflow-test ]
 
-jobs:  
+jobs:
   test:
+
     runs-on: ubuntu-latest
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: head # Not needed with a .ruby-version file
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-    - name: Install dependencies
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
+        with:
+          ruby-version: head
+      - name: Install dependencies
         run: bundle install
-    - run: cd _bash-scripts
-    - run: ruby populate-graphql.rb --secret ${{ secrets.API_TOKEN }}
+      - name: Run tests
+        run: bundle exec rake
+      - run: cd _bash-scripts
+      - run: ruby populate-graphql.rb --secret ${{ secrets.API_TOKEN }}
