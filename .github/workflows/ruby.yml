@@ -17,6 +17,5 @@ jobs:
         with:
           ruby-version: head # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - run: cd _bash-scripts
-      - run: ls
-      - run: bundle exec ruby populate-graphql.rb --secret ${{ secrets.API_TOKEN }}
+      - name: Test populate-graphql.rb script
+          run: (cd _bash-scripts ; bundle exec ruby populate-graphql.rb --secret ${{ secrets.API_TOKEN }})
