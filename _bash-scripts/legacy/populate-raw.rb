@@ -82,7 +82,7 @@ def main
     end 
     if nb_docs != nb_success
         puts "#{nb_success}/#{nb_docs} files passed! Check console output to fix errors.".red
-        exit 4
+        raise "frjifrj"
     else
         puts "#{nb_success}/#{nb_docs} files passed! The documentation has been successfully loaded.".green
         exit 0
