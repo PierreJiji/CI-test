@@ -22,7 +22,8 @@ title: Centre d'Expertise Appliquée en Innovation du CQEN
 description: >- 
     Centre d'Expertise Appliquée en Innovation du CQEN
 
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/plateforme-accueil-centre-innovation" # the subpath of your site, e.g. /blog
+url: "https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: none
 
 # Build settings
