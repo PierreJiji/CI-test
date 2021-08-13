@@ -25,5 +25,5 @@ jobs:
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with: 
           folder-path: _documentation-labs
-      - name: Test jekyll doctor
-        run: bundle exec jekyll doctor
+      - name: Test spelling
+        run: (cd _bash-scripts ; bundle exec ruby spellcheck.rb)
