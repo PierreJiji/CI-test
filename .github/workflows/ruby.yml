@@ -21,9 +21,9 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Test populate-graphql.rb script
         run: (cd _bash-scripts ; bundle exec ruby populate-graphql.rb)
+      - name: Test spelling
+        run: (cd _bash-scripts ; bundle exec ruby spellcheck.rb)
       - name: Test for broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         with: 
           folder-path: _documentation-labs
-      - name: Test spelling
-        run: (cd _bash-scripts ; bundle exec ruby spellcheck.rb)
