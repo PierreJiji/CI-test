@@ -26,4 +26,4 @@ jobs:
         with: 
           folder-path: _documentation-labs
       - name: Test jekyll doctor
-        run: jekyll doctor
+        run: bundle exec jekyll doctor
