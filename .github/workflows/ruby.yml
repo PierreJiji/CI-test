@@ -5,9 +5,9 @@
 name: Ruby
 on:
   push:
-    branches: [ workflow-test ]
+    branches: [ master, dev ]
   pull_request:
-    branches: [ worfklow-test ]
+    branches: [ master, dev ]
 jobs:
   test:
     runs-on: ubuntu-latest
