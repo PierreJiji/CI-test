@@ -19,7 +19,7 @@ jobs:
         with:
           ruby-version: head # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-          
+
       - name: Test jekyll doctor
         run: bundle exec jekyll doctor
 
@@ -29,7 +29,6 @@ jobs:
 
       - name: Test spelling
         run: (cd _bash-scripts ; bundle exec ruby spellcheck.rb)
-        continue-on-error: true
 
       - name: Test for broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
