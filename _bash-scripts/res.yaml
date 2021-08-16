@@ -8,12 +8,3 @@ digital-marketplace:
   raws: [
     https://raw.githubusercontent.com/CQEN-QDCE/digital_marketplace/bilan-experimentations/docs/D%C3%A9couverte/Exp%C3%A9rimentations/TRADUCTIONS.md,
   ]
-pia-back:
-  project-title: Le logiciel PIA
-  url: https://github.com/CQEN-QDCE/pia-back.git
-  paths: [
-    README.md
-  ]
-  raws: [
-    https://raw.githubusercontent.com/CQEN-QDCE/pia-back/master/README.md
-  ] 
