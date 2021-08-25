@@ -76,7 +76,7 @@ def main
                     branch = filePath.split("/")[0]
                     filePath = filePath.gsub(branch + "/", "")
 
-                    # gets the date with the graphql github api
+                    # getting the date with the graphql github api
                     command = 'curl -s -H "Authorization: Bearer ' + secret + '" \
                     -H  "Content-Type:application/json" \
                     -d \'{ 
@@ -87,10 +87,10 @@ def main
                     json = JSON.parse(`#{command}`)
                     if (!$?.success?)
                         raise "Impossible to get date from github api, check if project's url for " +
-                        "#{key} is valid. If it is, you may be getting rate limited by github api.\n"
+                        "#{key} is valid. If it is, you may be getting rate limited by the github api.\n"
                     else
-                        dateIso = json["data"]["repository"]["ref"]["target"]["history"]["edges"][0]["node"]["committedDate"] # I am so sorry
-                        dateShort = dateIso[0..9]  #Gets the date of the last commit on this file YYYY-MM-DD format
+                        dateIso = json["data"]["repository"]["ref"]["target"]["history"]["edges"][0]["node"]["committedDate"] # I am so sorry but it's graphql's fault
+                        dateShort = dateIso[0..9] # Gets the date of the last commit on this file YYYY-MM-DD format
                     end
 
                     raw = path.gsub("github.com", "raw.githubusercontent.com").gsub("/blob/", "/") # Gets raw file from normal url
@@ -98,13 +98,14 @@ def main
                     if (!$?.success?)
                         raise "Impossible to wget file from #{path}, check if path provided is valid.\n"
                     end
-                    file_prepend(fileName, dateIso, repoName, path)
+                    process_file(fileName, dateIso, repoName, path, path.chomp(filePath))
                     system("mv #{fileName} ../_documentation-labs/#{repoName}/#{dateShort}-#{fileName}")
                     create_index("../_documentation-labs/#{repoName}", "#{repoName}", content["project-title"], 
                         content["url"], description, repoDate)
                     nb_success += 1
                 rescue => e
                     puts(">>> An error occured while processing file".light_red)
+                    system("rm #{fileName}")
                     if trace
                         puts(">>> Full exception: #{e.full_message}".light_black)
                     else

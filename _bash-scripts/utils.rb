@@ -1,8 +1,30 @@
-### This script contains utility functions used by both populate-clone.rb and populate-raw.rb
+### This script contains utility functions used by populate-raw.rb
 
-# Prepends a jekyll header to a file by replacing the file 
-# (loops through each line to not load all of the file into memory at the same time)
-def file_prepend(path, date, repoName, url)
+# Looks for the links in the document and checks if they are relative paths instead of direct url
+def broken_links(file, repoUrl)
+  scan = file.scan(/\[.*?\]\([^#].*?\)/) # checks for [text](link) format (and not [text](#link))
+  for elem in scan do
+    if (!elem.include?("http"))
+      link = elem[/(?<=\().*(?=\))/] # get the text in between []
+      text = elem[/(?<=\[).*(?=\])/] # get the text in between ()
+      newlink = repoUrl + link
+      file = file.gsub(link, newlink)
+      puts "broken link found, automatically replacing \"#{link}\" with \"#{newlink}\"\n".cyan
+    end
+  end
+    
+  # scan = file.scan(/!\[.*?\]\(.*?\)/) # checks for ![text](link) format
+  
+  # for link in scan do
+  #   if (!link.include?("http"))
+  #   end
+  # end
+  return file
+end
+
+# Prepends a jekyll header to a file by replacing the file, iterating through each line and checking for broken links
+# (loops through each line to not load all of the lines into memory at the same time)
+def process_file(path, date, repoName, url, repoUrl)
     new_contents = ""
     str = 
     "---\n" +
@@ -15,7 +37,7 @@ def file_prepend(path, date, repoName, url)
     "index: false\n" +
     "---\n"
     File.open(path, 'r') do |fd|
-      contents = fd.read
+      contents = broken_links(fd.read, repoUrl)
       new_contents = str << contents
     end
     # Overwrite file but now with prepended string on it
@@ -59,7 +81,7 @@ def check_secret
     puts "Please respect the argument syntax of --secret <your_secret>".red
     abort
   
-  elsif (ENV["API_TOKEN"])
+  elsif (ENV["API_TOKEN"]) # fetches env variable
     puts "Using secret from environment variable".cyan
     secret = ENV["API_TOKEN"]
 
