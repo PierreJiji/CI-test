@@ -2,23 +2,17 @@
 
 # Looks for the links in the document and checks if they are relative paths instead of direct url
 def broken_links(file, repoUrl)
-  scan = file.scan(/\[.*?\]\([^#].*?\)/) # checks for [text](link) format (and not [text](#link))
+  scan = file.scan(/\[.*?\]\([^#].*?\)/) # checks for [link](text) format (and not [link](#text))
   for elem in scan do
     if (!elem.include?("http"))
       link = elem[/(?<=\().*(?=\))/] # get the text in between []
       text = elem[/(?<=\[).*(?=\])/] # get the text in between ()
       newlink = repoUrl + link
-      file = file.gsub(link, newlink)
       puts "broken link found, automatically replacing \"#{link}\" with \"#{newlink}\"\n".cyan
+      link = link.gsub(/(?=\W)/, "\\") # makes the string regex friendly
+      file = file.gsub(/(?<=\[)#{link}(?=\]\([^#].*?\))/, newlink) # replaces the link of a [link](text) format
     end
   end
-    
-  # scan = file.scan(/!\[.*?\]\(.*?\)/) # checks for ![text](link) format
-  
-  # for link in scan do
-  #   if (!link.include?("http"))
-  #   end
-  # end
   return file
 end
 

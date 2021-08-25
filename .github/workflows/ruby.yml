@@ -35,3 +35,4 @@ jobs:
         timeout-minutes: 5
         with: 
           folder-path: _documentation-labs
+          use-quiet-mode: yes

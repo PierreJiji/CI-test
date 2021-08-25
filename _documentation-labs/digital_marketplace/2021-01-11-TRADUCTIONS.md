@@ -20,7 +20,7 @@ index: false
 
 >Voir :
 >
->* [Documentation](https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/TRANSLATIONS.md)
+>* [Documentation](docs/TRANSLATIONS.md)
 >* [Pull-request de l'expérimentation](https://github.com/CQEN-QDCE/digital_marketplace/pull/8/files)
 
 1. Installer les module NPM d'internationalisation :
