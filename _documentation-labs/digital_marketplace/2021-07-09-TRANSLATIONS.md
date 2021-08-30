@@ -10,7 +10,7 @@ index: false
 # Traductions
 
 * Le module de traduction utilisé est [i18next](https://www.i18next.com/).
-* La configuration se trouve [coté front-end](src/front-end/typescript/lib/i18n)
+* La configuration se trouve [coté front-end](https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/src/front-end/typescript/lib/i18n)
 * Les traductions sont transpilées à même le code javascript.
 * L'application côté serveur n'utilise pas encore de traduction.
 
@@ -88,7 +88,7 @@ npm i i18next-parser # N'est pas installé par défaut car la version actuelle c
 npm run i18n:parse
 ```
 
-Les termes non traduits seront ajoutés aux fichiers de traduction [anglais](src/front-end/typescript/lib/i18n/locales/en/translation.json) et [français](src/front-end/typescript/lib/i18n/locales/fr/translation.json)
+Les termes non traduits seront ajoutés aux fichiers de traduction [anglais](https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/src/front-end/typescript/lib/i18n/locales/en/translation.json) et [français](https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/src/front-end/typescript/lib/i18n/locales/fr/translation.json)
 
 ## Erreurs communes
 

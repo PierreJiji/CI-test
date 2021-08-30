@@ -2,15 +2,18 @@
 
 # Looks for the links in the document and checks if they are relative paths instead of direct url
 def broken_links(file, repoUrl)
-  scan = file.scan(/\[.*?\]\([^#].*?\)/) # checks for [link](text) format (and not [link](#text))
+  scan = file.scan(/\!?\[.*?\]\([^#].*?\)/) # checks for [text](link) format (and not [text](#link))
   for elem in scan do
     if (!elem.include?("http"))
-      link = elem[/(?<=\().*(?=\))/] # get the text in between []
-      text = elem[/(?<=\[).*(?=\])/] # get the text in between ()
-      newlink = repoUrl + link
-      puts "broken link found, automatically replacing \"#{link}\" with \"#{newlink}\"\n".cyan
-      link = link.gsub(/(?=\W)/, "\\") # makes the string regex friendly
-      file = file.gsub(/(?<=\[)#{link}(?=\]\([^#].*?\))/, newlink) # replaces the link of a [link](text) format
+      link = elem[/(?<=\().*(?=\))/] # get the link in between ()
+      if (elem[0] == "!") # if the markdown link is actually a multimedia resource
+        newlink = repoUrl + link + "?raw=true"
+      else
+        newlink = repoUrl + link
+      end
+       newlink = elem.gsub(/(?<=\().*(?=\))/, newlink) # puts the new link in the [text](link) format
+      file = file.gsub(elem, newlink) # replaces the original link format
+      puts "broken link found, automatically replaced \"#{link}\" with \"#{newlink}\"\n".cyan
     end
   end
   return file
@@ -57,6 +60,7 @@ def create_index(path, repoName, projectTitle, url, description, repoDate)
     File.open(path + "/index.md", 'w') {|f| f.write(str) }
 end
 
+# used for debugging to make the console wait for input
 def waitForInput
   puts("Waiting for input:")
   gets.chomp.upcase
