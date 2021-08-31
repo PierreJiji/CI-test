@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ master, dev ]
 jobs:
-  test:
+  Pre-Build Tests:
     runs-on: ubuntu-latest
     env:
       API_TOKEN: ${{ secrets.API_TOKEN }}
@@ -27,13 +27,13 @@ jobs:
         run: (cd _bash-scripts ; bundle exec ruby populate-graphql.rb)
         timeout-minutes: 3
 
+      - uses: actions/checkout@v2
+      - uses: igsekor/pyspelling-any@v0.0.2
+        name: Spellcheck
+
       - name: Test for broken links
         uses: gaurav-nelson/github-action-markdown-link-check@v1
         timeout-minutes: 5
         with: 
           folder-path: _documentation-labs
           use-quiet-mode: yes
-
-      - uses: actions/checkout@v2
-      - uses: igsekor/pyspelling-any@v0.0.2
-        name: Spellcheck
