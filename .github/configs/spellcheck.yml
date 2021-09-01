@@ -3,14 +3,14 @@ matrix:
   aspell:
     lang: fr
     d: fr
-  pipeline:
-  - pyspelling.parsers.markdown_parser:
-      markdown_extensions:
-      - markdown.extensions.toc:
-          slugify: !!python/name:pymdownx.slugs.uslugify
-          permalink: "\ue157"
-      - markdown.extensions.admonition
-      - markdown.extensions.smarty
+  # pipeline:
+  # - pyspelling.parsers.markdown_parser:
+  #     markdown_extensions:
+  #     - markdown.extensions.toc:
+  #         slugify: !!python/name:pymdownx.slugs.uslugify
+  #         permalink: "\ue157"
+  #     - markdown.extensions.admonition
+  #     - markdown.extensions.smarty
   source:
-  - '../../*'
+  - '*'
   default_encoding: utf-8
