@@ -12,5 +12,5 @@ matrix:
       - markdown.extensions.admonition
       - markdown.extensions.smarty
   source:
-  - '**/*.md'
+  - '../../*'
   default_encoding: utf-8
