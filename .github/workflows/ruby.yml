@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ master, dev ]
 jobs:
-  Pre-Build_Tests:
+  Build-Tests:
     runs-on: ubuntu-latest
     env:
       API_TOKEN: ${{ secrets.API_TOKEN }}
