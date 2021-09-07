@@ -1,0 +1,17 @@
+name: Spellcheck Action
+on:
+  push:
+    branches: [ master, dev ]
+  pull_request:
+    branches: [ master, dev ]
+jobs:
+  build:
+    name: Spellcheck
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - uses: rojopolis/spellcheck-github-actions@0.16.0
+      name: Spellcheck
+      with:
+        config_path: .github/configs/spellcheck.yml # put path to configuration file here
+        task_name: Markdown 
