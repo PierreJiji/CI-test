@@ -28,3 +28,11 @@ end
 # Performance-booster for watching directories on Windows
 gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
 
+
+# Librairies used for ./_bash-scripts
+gem "colorize", "~> 0.8.1"
+gem "yaml", "~> 0.1.0"
+gem "graphql", "~> 1.12.14"
+
+# adressable versions 2.3.0, to 2.7.0 are highly vulnerable
+gem "addressable", ">= 2.8.0"

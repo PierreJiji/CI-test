@@ -1,9 +1,10 @@
 ---
-date: 2021-01-11T15:45:41-05:00
+date: 2021-01-11T20:45:41Z
 permalink: documentation-labs/digital_marketplace/:title
 layout: post
 type: posts
 project: digital_marketplace
+github: https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/Découverte/Expérimentations/TRADUCTIONS.md
 index: false
 ---
 # Module de traduction
@@ -19,7 +20,7 @@ index: false
 
 >Voir :
 >
->* [Documentation](docs/TRANSLATIONS.md)
+>* [Documentation](https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/TRANSLATIONS.md)
 >* [Pull-request de l'expérimentation](https://github.com/CQEN-QDCE/digital_marketplace/pull/8/files)
 
 1. Installer les module NPM d'internationalisation :
@@ -58,9 +59,7 @@ index: false
 | Sauvegarder les préférences linguistiques de l'utilisateur <sup>[1](#localstorage)</sup> | ✓ |
 | Traduire du texte côté serveur | ✓ |
 | Sauvegarder les préférences linguistiques d'un utilisateur dans le SGBD | ✓ |
-
 ---
-
 <a name="localstorage">1</a>: Les préférences sont enregistrées dans le stockage local du navigateur de l'utilisateur.
 
 ## Analyse

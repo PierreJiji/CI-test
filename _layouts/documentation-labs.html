@@ -7,12 +7,21 @@ layout: default
     {%- endif -%}
 
     {{ content }}
-
+    
+    <br>
     <ul class="post-list">
       {% for lab in site.documentation-labs %}
         {%- if lab.index == true -%} <!--Only show the indexes-->
           <li>
-            <h3><a href={{lab.project}}>{{lab.title}}</a></h3>
+            <h3>
+              <a href={{lab.project}}>{{lab.title}}</a>
+              <a target="_blank" rel="noopener noreferrer" href={{lab.github}}>
+                <i class="github-icon fab fa-github"></i>
+              </a>
+            </h3>                
+            <span class="post-meta">
+              {{ lab.content | strip_html }}
+            </span>
           </li>
         {%- endif -%}
       {% endfor %}        
