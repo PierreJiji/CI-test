@@ -21,24 +21,24 @@ end
 
 # Prepends a jekyll header to a file by replacing the file, iterating through each line and checking for broken links
 # (loops through each line to not load all of the lines into memory at the same time)
-def process_file(path, date, repoName, url, repoUrl)
+def process_file(fileName, date, repoName, url, repoUrl)
     new_contents = ""
     str = 
     "---\n" +
     "date: #{date}\n" +
-    "permalink: documentation-labs/#{repoName}/:title\n" +
+    "permalink: documentation-labs/#{repoName}/#{fileName.split('.')[0]}.html\n" +
     "layout: post\n" +
     "type: posts\n" +
     "project: #{repoName}\n" +
     "github: #{url}\n" +
     "index: false\n" +
     "---\n"
-    File.open(path, 'r') do |fd|
+    File.open(fileName, 'r') do |fd|
       contents = broken_links(fd.read, repoUrl)
       new_contents = str << contents
     end
     # Overwrite file but now with prepended string on it
-    File.open(path, 'w') do |fd| 
+    File.open(fileName, 'w') do |fd| 
       fd.write(new_contents)
     end
 end

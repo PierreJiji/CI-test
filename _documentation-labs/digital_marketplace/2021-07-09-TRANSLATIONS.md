@@ -1,6 +1,6 @@
 ---
 date: 2021-07-09T19:13:13Z
-permalink: documentation-labs/digital_marketplace/:title
+permalink: documentation-labs/digital_marketplace/TRANSLATIONS.html
 layout: post
 type: posts
 project: digital_marketplace
