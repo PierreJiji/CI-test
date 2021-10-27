@@ -67,6 +67,7 @@ collections:
 exclude:
   - Dockerfile
   - README.md
+  - .codebuild/
 
 include:
   - _pages
