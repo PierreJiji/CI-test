@@ -1,5 +1,5 @@
 # Site: 
-- https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/
+- https://cqen-qdce.github.io/ceai-cqen-web-platform/
 
 ### Pour héberger le site localement:
 1. Cloner le projet.
