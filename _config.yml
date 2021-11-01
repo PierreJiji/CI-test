@@ -22,8 +22,8 @@ title: Centre d'Expertise Appliquée en Innovation du CQEN
 description: >- 
     Centre d'Expertise Appliquée en Innovation du CQEN
 
-baseurl: "/plateforme-accueil-centre-innovation" # the subpath of your site, e.g. /blog
-url: "https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/" # the base hostname & protocol for your site, e.g. http://example.com
+# baseurl: "/plateforme-accueil-centre-innovation/" # the subpath of your site, e.g. /blog
+# url: "https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/" # the base hostname & protocol for your site, e.g. http://example.com
 permalink: none
 
 # Build settings
@@ -38,7 +38,7 @@ defaults:
       path: "_posts/plateforme-accueil-contenu"
       type: posts
     values:
-      permalink: documentation/:title
+      permalink: documentation/:title.html
       layout: post
       categories: documentation
 
@@ -67,6 +67,7 @@ collections:
 exclude:
   - Dockerfile
   - README.md
+  - .codebuild/
 
 include:
   - _pages

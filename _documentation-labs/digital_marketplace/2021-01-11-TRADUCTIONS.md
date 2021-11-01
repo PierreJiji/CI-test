@@ -1,6 +1,6 @@
 ---
 date: 2021-01-11T20:45:41Z
-permalink: documentation-labs/digital_marketplace/:title
+permalink: documentation-labs/digital_marketplace/TRADUCTIONS.html
 layout: post
 type: posts
 project: digital_marketplace
