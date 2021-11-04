@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - bundle install
+  build:
+    commands:
+      - JEKYLL_ENV=production
+      - (cd _bash-scripts ; bundle exec ruby populate-graphql.rb)
+      - bundle exec jekyll build --destination _site
+      - aws s3 sync ./_site s3://ceai-cqen-plateforme-accueil --delete
+
+
+      # - CURRENT_DATE_TIME=$(date "+%d-%m-%y_%H:%M:%S")
+      # - bundle exec jekyll build --destination "_build/$CURRENT_DATE_TIME-site"
+      ## one liner ^
+      # date "+%d-%m-%y_%H:%M:%S" |xargs -I{} bundle exec jekyll build --destination "_build/{}-site"
+
+artifacts:
+  base-directory: '_build'
+  files:
+    - '**/*'
