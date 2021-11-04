@@ -18,6 +18,6 @@ phases:
       # date "+%d-%m-%y_%H:%M:%S" |xargs -I{} bundle exec jekyll build --destination "_build/{}-site"
 
 artifacts:
-  base-directory: '_build'
+  base-directory: '_site'
   files:
     - '**/*'
