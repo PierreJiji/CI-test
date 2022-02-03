@@ -6,8 +6,8 @@ digital-marketplace:
     https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/TRANSLATIONS.md
   ]
 pia-back:
-  project-title: Le logiciel PIA
-  url: https://github.com/CQEN-QDCE/pia-back.git
+  project-title: Candy
+  url: https://github.com/CQEN-QDCE/Candy.git
   paths: [
-    https://github.com/CQEN-QDCE/pia-back/blob/master/README.md
+    https://github.com/CQEN-QDCE/Candy/blob/main/README.md
   ]
