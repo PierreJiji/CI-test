@@ -9,7 +9,7 @@ phases:
       - JEKYLL_ENV=production
       - (cd _bash-scripts ; bundle exec ruby populate-graphql.rb)
       - bundle exec jekyll build --destination _site
-      - aws s3 sync ./_site s3://ceai-test-plateform-web-bucket --delete
+      # - aws s3 sync ./_site s3://ceai-test-plateform-web-bucket --delete
 
 
       # - CURRENT_DATE_TIME=$(date "+%d-%m-%y_%H:%M:%S")
