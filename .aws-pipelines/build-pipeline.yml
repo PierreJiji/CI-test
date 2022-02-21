@@ -1,23 +1,20 @@
 version: 0.2
+env:
+  variables:
+    JEKYLL_ENV: production
 
 phases:
   install:
     commands:
+      - gem install bundler
       - bundle install
   build:
     commands:
-      - JEKYLL_ENV=production
       - (cd _bash-scripts ; bundle exec ruby populate-graphql.rb)
-      - bundle exec jekyll build --destination _site
-      # - aws s3 sync ./_site s3://ceai-test-plateform-web-bucket --delete
-
-
-      # - CURRENT_DATE_TIME=$(date "+%d-%m-%y_%H:%M:%S")
-      # - bundle exec jekyll build --destination "_build/$CURRENT_DATE_TIME-site"
-      ## one liner ^
-      # date "+%d-%m-%y_%H:%M:%S" |xargs -I{} bundle exec jekyll build --destination "_build/{}-site"
+      - bundle exec jekyll build
 
 artifacts:
+  type: zip
   base-directory: '_site'
   files:
     - '**/*'
