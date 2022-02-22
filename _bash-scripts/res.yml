@@ -1,11 +1,4 @@
-digital-marketplace:
-  project-title: Digital Marketplace
-  url: https://github.com/CQEN-QDCE/digital_marketplace.git
-  paths: [
-    https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/D%C3%A9couverte/Exp%C3%A9rimentations/TRADUCTIONS.md,
-    https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/docs/TRANSLATIONS.md
-  ]
-pia-back:
+candy:
   project-title: Candy
   url: https://github.com/CQEN-QDCE/Candy.git
   paths: [

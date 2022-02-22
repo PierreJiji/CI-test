@@ -19,6 +19,9 @@ def main
 
     puts "==========================================="
     
+    # Deletes current site folder if it existed
+    system("rm -rf ../_documentation-labs/*")
+
     res.each do |key, content|
         begin
             exception = false
@@ -33,8 +36,6 @@ def main
             # gets repo owner (ex: CQEN-QDCE)
             owner = repoPath.split('/')[0]
 
-            # Deletes current site folder if it existed
-            system("rm -rf ../_documentation-labs/#{repoName}")
             system("mkdir ../_documentation-labs/#{repoName}")
 
             # Get repo description and last push to default branch
