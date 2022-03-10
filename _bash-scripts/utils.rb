@@ -70,6 +70,7 @@ end
 # Returns the fetched secret
 def check_secret
   index = ARGV.find_index("--secret")
+  puts "searching for API token #{ENV["API_TOKEN"]}"
 
   if (index && ARGV[index+1]) # --secret 12345
     puts "Using secret from provided argument".cyan
@@ -82,11 +83,12 @@ def check_secret
   elsif (ENV["API_TOKEN"]) # fetches env variable
     puts "Using secret from environment variable".cyan
     secret = ENV["API_TOKEN"]
+    puts secret
 
-  else # no arguments
-    puts "Fetching API key from local files...".yellow
-    secret = strVar = File.open('secret') {|f| f.readline}
-    secret = secret.delete("\n")
+  # else # no arguments
+  #   puts "Fetching API key from local files...".yellow
+  #   secret = strVar = File.open('secret') {|f| f.readline}
+  #   secret = secret.delete("\n")
   end
 
   return secret

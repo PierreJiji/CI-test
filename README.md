@@ -1,24 +1,15 @@
 # Site: 
-- https://cqen-qdce.github.io/ceai-cqen-web-platform/
+<!-- TODO: METTRE À JOUR L'URL DE LA PAGE D'ACCUEIL UNE FOIS LE DÉPLOIEMENT EN PROD COMPLÉTÉ -->
+- https://cqen-qdce.github.io/plateforme-accueil-centre-innovation/
 
 ### Pipeline de déploiement en production
 
-Le pipeline est démarré par : 
--	Un Github Pull Request se faisant accepter sur la branche main OU tout autre push sur la branche main.
 Le pipeline fonctionne sur : 
--	Github Actions
-Le pipeline déploie le site vers : 
--	Amazon S3
+-	AWS CodePipeline
+Le pipeline est démarré par : 
+-	Un Github Pull Request se faisant accepter sur la branche main OU tout autre push sur la branche main. Il est aussi possible de démarrer le pipeline manuellement à partir de l'interface d'AWS. Pour ce faire, aller sur AWS CodePipeline, seléctionner le pipeline voulu et cliquer sur « release change ».
 
-Pour démarrer le pipeline de déploiement, il faut avoir soit poussé directement sur la branche principale des changements, créé et accepté un pull request, ou alors aller sur la dernière instance exécutée du pipeline dans la section « actions » et cliquer sur « rerun all jobs » sur le build du CI/CD.
- 
-Vous pourrez ensuite voir le processus s’exécuter et voir les détails de chaque étapes du fichier YAML en cliquant sur « build » : 
-Si les secrets ne fonctionnent plus ou vous avez à changer de bucket ou de compte AWS pour le déploiement, vous pouvez aller dans les options du dépôt github, dans la section « secrets » et mettre à jour les différents secrets nécessaires au fonctionnement du workflow.
--	AWS_ACCESS_KEY_ID : Le nom de la clé (ID) de connexion du compte IAM utilisé.
--	AWS_DEFAULT_REGION : La région par défaut du bucket.
--	AWS_S3_BUCKET_NAME : Le nom du bucket utilisé.
--	AWS_SECRET_ACCESS_KEY : La valeur de la clé de connexion du compte IAM utilisé.
-
+Vous pourrez ensuite voir le processus s’exécuter et voir les détails de chaque étape d'exécution en clicant sur le pipeline en exécution.
 
 ### Pour héberger le site localement:
 1. Cloner le projet.
