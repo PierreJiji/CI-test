@@ -1,10 +1,69 @@
+<style>
+  .footer-basic {
+    padding:40px 0;
+    background-color:#223654;
+    color:white;
+    text-decoration: none;
+    
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:16px;
+    margin-bottom:0;
+    text-align: center;
+    
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+    display: inline-block;
+    
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+    text-decoration: underline;
+    color: #1685e1;
+    zoom: 105%;
+  }
+  
+  .footer-basic .head {
+   text-align: center;
+    margin-top:0;
+    margin-bottom:44px;
+    font-weight:600;
+    font-size:22px;
+  }
+  
+  
+  </style>
+  <div class="footer-basic">
+    <footer>
+        <h1 class = "head">Centre d'Expertise Appliquée en Innovation du CQEN</h1>
+        <ul class="list-inline">
+            <li class="list-inline-item"><a href="https://www.quebec.ca/" >Gouvernement du Québec</a></li>
+            <li class="list-inline-item"><a href="https://www.quebec.ca/gouvernement/ministere/cybersecurite-numerique">Ministère de la Cybersécurité et du Numérique</a></li>
+            <li class="list-inline-item"><a href="{{site.baseurl}}/nous-joindre">Nous joindre </a></li>
+            <li class="list-inline-item"><a href="#">lien 4</a></li>
+        </ul>
+    </footer>
+  </div>
 <footer role="contentinfo" id="piv_piedPage">
-  <div class="footerSite site-footer h-card">
+  <!--<div class="footerSite site-footer h-card">-->
     <data class="u-url" href="{{ "/" | relative_url }}"></data>
 
     <div class="wrapper">
   
-      <h2 class="footer-heading">{{ site.title | escape }}</h2>
+      <!--<h2 class="footer-heading">{{ site.title | escape }}</h2>-->
   
       <!-- <div class="footer-col-wrapper"> 
         <div class="footer-col footer-col-1">
@@ -35,9 +94,9 @@
               <li>
                   <a href="accessibilite/">Accessibilité</a>
               </li>-->
-              <li>
+              <!--<li>
                   <a href="mailto:cqen.lab.innovation@mcn.gouv.qc.ca">Nous joindre</a>
-              </li>
+              </li>-->
               <!-- <li class="last"> 
                   <a href="politique-de-confidentialite/">Politique de confidentialité</a>
               </li>-->
