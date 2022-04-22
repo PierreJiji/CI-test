@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+    <style>
+.testt{
+  text-align: center;
+  background-color: white;
+}
+.first-title{
+  font-weight: 650;
+}
+.sub-title{
+  font-weight: 500;
+}
+
+
+    </style>
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+    {%- include particles.html -%}
+
+    <!--<div class="index-description">
+      <h1> Commencez à innover dès maintenant! </h1>
+      <h3>
+        Ce portail est votre point d’entrée vers l’environnement d’innovation du CEAI. 
+        Choisissez parmi les services offerts ce qui correspond à ce que vous souhaitez réaliser. 
+      </h3>
+    </div>-->
+    <div class="testt">
+      <h1 class="first-title">Plan du site</h1>
+      <div class="list-1">
+          <ul class="contact-list" >
+            <li class="list-item"><a href="/">Acceuil</a></li>
+        </ul>
+      </div>
+      <div class="list-2">
+          <ul class="contact-list">             
+            <li class="list-item"><a href="{{site.baseurl}}/coffre-a-outils/index.html">Coffre à outils du CEAI</a></li>                           
+        </ul>
+      </div>
+      <div class="list-3">
+          <ul class="contact-list">
+            <li class="list-item"><a href="{{site.baseurl}}/documentation-labs/index.html">Documentation des laboratoires</a></li>          
+        </ul>
+      </div>
+      <div class="list-4">
+        <ul class="contact-list">
+          <li class="list-item"><a href="{{site.baseurl}}/nous-joindre">Nous joindre </a></li>          
+      </ul>
+    </div>
+      
+  </div>
+
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
