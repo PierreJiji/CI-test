@@ -1,6 +1,6 @@
 ---
-layout: plan-du-site
+layout: a-propos-de-nous
 
-permalink: /plan-du-site
+permalink: /a-propos-de-nous
 
 ---
