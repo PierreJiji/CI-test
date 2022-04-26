@@ -13,6 +13,105 @@
   font-weight: 500;
 }
 
+/* SECTION GALERIE*/
+h2
+{
+	font-size:1.5em;
+	text-align:center;
+}
+#promotionsLeft
+{
+	float:left;
+	width:50%;
+}
+#promotionsTitre
+{
+  margin-top:40px;
+}
+#promotionsRight
+{
+	float:left;
+	width:50%;
+	text-align:center;
+}
+
+#promo_par
+{
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:20px;
+	font-size:1em;
+	color:#fcc32c;
+}
+.arranger
+{
+	clear:both;
+}
+#vignette
+{	
+	margin-top:40px;
+	display: inline-block;
+}
+
+.vignette
+{
+	float:left;
+	height:130px;
+	width:120px;
+	margin-left:30px;
+	margin-bottom:30px;
+}
+
+#promotionsImg
+{
+	margin-left:56px;
+	width:400px;
+	height:400px;
+	border: 1px solid #dddddd;
+	background-color:white;
+}
+.lignee
+{
+  width:950px;
+  border-bottom: 1px solid #fcc32c;
+  margin-left:30px;
+  margin-right:30px;
+  text-align:left;
+  font-size:1em;
+  
+}
+#promoImg
+{
+	max-height:400px;
+	max-width:400px;
+}
+
+#promotionsTitre
+{
+	width:400px;
+	height:30px;
+	border: 1px solid #dddddd;
+	color: #20107e;
+	font-size:1.3em;
+	padding-top: 5px;
+	margin-top: -1px;
+	margin-left: 56px;
+	font-weight: bold;
+}
+
+#nouveauTitre
+{
+	color: #1e0d66;
+  font-size:0.6em;
+}
+
+.imgBottom
+{
+	height:40px;
+	width:40px;
+	margin:10px;
+}
+/*FIN GALERIE*/
 
     </style>
   {%- include head.html -%}
@@ -23,33 +122,47 @@
     {%- include particles.html -%}
 
     <div class="index-description">
-      <h1>Notre équipe</h1>
-      <h3>
-        Ce portail est votre point d’entrée vers l’environnement d’innovation du CEAI. 
-        Choisissez parmi les services offerts ce qui correspond à ce que vous souhaitez réaliser. 
-      </h3>
+      <h1>Centre québecois d'excellence numérique</h1>
     </div>
-    <div class="testt">
-      <h1 class="first-title">Notre équipe</h1>
-      <div class="list-1">
-          <ul class="contact-list" >
-            <li class="list-item"><a href="https://www.google.ca/maps/place/875+Grande+All%C3%A9e+E,+Qu%C3%A9bec,+QC+G1R+4Y8/@46.8081594,-71.2149624,17z/data=!3m1!4b1!4m5!3m4!1s0x4cb895d9c1a67c5b:0x7d61fbcde950d5c4!8m2!3d46.8081594!4d-71.2127737"><i class="tailleXL fas fa-map-marker-alt"></i> 875, Grande Allée Est, 4e étage, secteur 400 Québec (Québec) G1R 5R8</a></li>
-        </ul>
-      </div>
-      <div class="list-2">
-          <ul class="contact-list">      
-            <li class="list-item"><a href="tel:418 643-0875 " ><i class="tailleXL fa fa-phone"></i> 418 643-0875</a></li>
-                            
-        </ul>
-      </div>
-      <div class="list-3">
-          <ul class="contact-list">
-            <li class="list-item"><a href="mailto:cqen.lab.innovation@mcn.gouv.qc.ca" ><i class="tailleXL fa fa-envelope-o"></i> cqen.lab.innovation@mcn.gouv.qc.ca</a></li>
+    
+    <section id="contenu">
+      <h1>Direction de l'innovation et de la performance</h1>
+    <div id="promotionsLeft">
+        <div id="promo_par">
+          <h1 class="lignee">Notre équipe</h1>
+          <div id="vignette">
+            <div class="vignette"><img id="image1" src="images/imagesVisionneuse/vignette1.jpg" alt="image vignette"/></div>
+            <div class="vignette"><img id="image2" src="images/imagesVisionneuse/vignette2.jpg" alt="image vignette"/></div>
+            <div class="vignette"><img id="image3" src="images/imagesVisionneuse/vignette3.jpg" alt="image vignette"/></div>
+            <div class="vignette"><img id="image4" src="images/imagesVisionneuse/vignette4.jpg" alt="image vignette"/></div>
+            <div class="vignette"><img id="image5" src="images/imagesVisionneuse/vignette5.jpg" alt="image vignette"/></div>
+            <div class="vignette"><img id="image6" src="images/imagesVisionneuse/vignette6.jpg" alt="image vignette"/></div>
             
-        </ul>
+          </div>
+          
+        </div>
       </div>
+      <div id="promotionsRight">
+        <div id="promotions">
+          <h2 id="promotionsTitre">Daniel Piché</h2>
+          <div id="promotionsImg">
+            <img id="promoImg" src="images/imagesVisionneuse/image1.jpg" alt="image visionneuse1"/><br/>											
+          </div>
+          <div id="promotionsTitre">
+               <span id="nouveauTitre">Directeur de l'innovation et de la performance</span>
+          </div>					
+          <img id="btnPrecedent" class="imgBottom" src="images/imagesVisionneuse/zprecedent.png" alt="Bouton precedent"/>
+          <img id="btnStop" class="imgBottom" src="images/imagesVisionneuse/zstop.png" alt="Bouton stop"/>
+          <img id="btnDemarrer"  class="imgBottom" src="images/imagesVisionneuse/zdemarrer.png" onclick="demarrer.joue('Musique')"alt="Bouton demarrer"/>
+          <img id="btnSuivant" class="imgBottom" src="images/imagesVisionneuse/zsuivant.png" alt="Bouton suivant"/>
+        </div>   
+      </div>    
       
-  </div>
+      <p class="arranger"></p>				
+        
+
+    </section> 
+  
 
 
     {%- include footer.html -%}
