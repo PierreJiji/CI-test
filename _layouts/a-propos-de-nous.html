@@ -19,29 +19,39 @@ h2
 	font-size:1.5em;
 	text-align:center;
 }
-#promotionsLeft
+#imagesLeft
 {
 	float:left;
 	width:50%;
 }
-#promotionsTitre
+
+#nomTitre
 {
   margin-top:40px;
+  width:400px;
+	height:30px;
+	border: 1px solid #dddddd;
+	color: #20107e;
+	font-size:1.3em;
+	padding-top: 5px;
+	margin-top: -1px;
+	margin-left: 56px;
+	font-weight: bold;
 }
-#promotionsRight
+#imagesRight
 {
 	float:left;
 	width:50%;
 	text-align:center;
 }
 
-#promo_par
+#images_par
 {
 	margin-left:20px;
 	margin-right:20px;
 	margin-bottom:20px;
 	font-size:1em;
-	color:#fcc32c;
+	color:#131592;
 }
 .arranger
 {
@@ -62,7 +72,7 @@ h2
 	margin-bottom:30px;
 }
 
-#promotionsImg
+#personneImg
 {
 	margin-left:56px;
 	width:400px;
@@ -73,20 +83,20 @@ h2
 .lignee
 {
   width:950px;
-  border-bottom: 1px solid #fcc32c;
+  border-bottom: 1px solid #3a2cfc;
   margin-left:30px;
   margin-right:30px;
   text-align:left;
   font-size:1em;
   
 }
-#promoImg
+#persImg
 {
 	max-height:400px;
 	max-width:400px;
 }
 
-#promotionsTitre
+#personnesTitre
 {
 	width:400px;
 	height:30px;
@@ -126,10 +136,12 @@ h2
     </div>
     
     <section id="contenu">
-      <h1>Direction de l'innovation et de la performance</h1>
-    <div id="promotionsLeft">
-        <div id="promo_par">
+      <h1 class="posiText">Direction de l'innovation et de la performance</h1>
+    <div id="imagesLeft">
+        <div id="images_par">
           <h1 class="lignee">Notre équipe</h1>
+       
+        
           <div id="vignette">
             <div class="vignette"><img id="image1" src="images/imagesVisionneuse/vignette1.jpg" alt="image vignette"/></div>
             <div class="vignette"><img id="image2" src="images/imagesVisionneuse/vignette2.jpg" alt="image vignette"/></div>
@@ -142,13 +154,13 @@ h2
           
         </div>
       </div>
-      <div id="promotionsRight">
-        <div id="promotions">
-          <h2 id="promotionsTitre">Daniel Piché</h2>
-          <div id="promotionsImg">
-            <img id="promoImg" src="images/imagesVisionneuse/image1.jpg" alt="image visionneuse1"/><br/>											
+      <div id="imagesRight">
+        <div id="imDescription">
+          <h2 id="nomTitre">Daniel Piché</h2>
+          <div id="personneImg">
+            <img id="persImg" src="images/imagesVisionneuse/image1.jpg" alt="image visionneuse1"/><br/>											
           </div>
-          <div id="promotionsTitre">
+          <div id="personnesTitre">
                <span id="nouveauTitre">Directeur de l'innovation et de la performance</span>
           </div>					
           <img id="btnPrecedent" class="imgBottom" src="images/imagesVisionneuse/zprecedent.png" alt="Bouton precedent"/>
