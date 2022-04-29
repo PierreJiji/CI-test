@@ -1,9 +1,9 @@
 window.onload = init;
-"use strict";
+
 var noImageCourant = 0;
 var noImage = 1;
 var id = "image" + noImage;
-document.getElementById(id).style.border="5px double #fcc32c";
+document.getElementById(id).style.border="5px double #3a2cfc";
 
 var tempsAttente;
 var ilYADemarrage = false;
@@ -16,23 +16,23 @@ for(j = 0; j < 11; j++)
 }
 
 imDescription[0]["titre"] = "Daniel Piché";
-imDescription[0]["image"] = "Daniel.jpg";
+imDescription[0]["image"] = "image1.jpg";
 imDescription[0]["nouveauTitre"] = "Directeur de l'innovation et de la performance";	
 
 imDescription[1]["titre"] = "Viviane Orge";
-imDescription[1]["image"] = "Viviane.jpg";
+imDescription[1]["image"] = "image2.jpg";
 imDescription[1]["nouveauTitre"] = "Développeuse full stack";	
 
 imDescription[2]["titre"] = "Rocio Philipps Valencia ";
-imDescription[2]["image"] = "Rocio.jpg";
+imDescription[2]["image"] = "image3.jpg";
 imDescription[2]["nouveauTitre"] = "Développeuse full stack";	
 
 imDescription[3]["titre"] = "Diego Barreto";
-imDescription[3]["image"] = "Diego.jpg";
+imDescription[3]["image"] = "image4.jpg";
 imDescription[3]["nouveauTitre"] = "Développeur full stack";	
 
 imDescription[4]["titre"] = "Francis Gagné";
-imDescription[4]["image"] = "Francis.jpg";
+imDescription[4]["image"] = "image5.jpg";
 imDescription[4]["nouveauTitre"] = "Développeur full stack";
 
 imDescription[5]["titre"] = "Pierre Jiji";
@@ -90,10 +90,10 @@ function avancer() /*cette fonction sert à avancer les images de la visionneuse
 	}
 	document.getElementById(id).style.border="none"; 		
 	id = "image" + noImage;
-    document.getElementById("persImg").src = "images/imagesVisionneuse/" + promotions[noImage-1]["image"];
-	document.getElementById("nomTitre").innerHTML = promotions[noImage-1]["titre"];
-	document.getElementById("nouveauTitre").innerHTML = promotions[noImage-1]["nouveauTitre"];
-	document.getElementById(id).style.border="5px double #fcc32c";
+    document.getElementById("persImg").src = "{{site.baseurl}}/assets/piv/" + imDescription[noImage-1]["image"];
+	document.getElementById("nomTitre").innerHTML = imDescription[noImage-1]["titre"];
+	document.getElementById("nouveauTitre").innerHTML = imDescription[noImage-1]["nouveauTitre"];
+	document.getElementById(id).style.border="5px double #20107e";
 }
 
 function reculer()/*cette fonction sert à faire reculer les images la visionneuse manuellement*/
@@ -106,20 +106,20 @@ function reculer()/*cette fonction sert à faire reculer les images la visionneu
 	}
 	document.getElementById(id).style.border="none"; 	
 	id = "image" + noImage;	
-    document.getElementById("persImg").src = "images/imagesVisionneuse/" + promotions[noImage-1]["image"];
-	document.getElementById("nomTitre").innerHTML = promotions[noImage-1]["titre"];
-	document.getElementById("nouveauTitre").innerHTML = promotions[noImage-1]["nouveauTitre"];
-	document.getElementById(id).style.border="5px double #fcc32c";
+    document.getElementById("persImg").src = "{{site.baseurl}}/assets/piv/" + imDescription[noImage-1]["image"];
+	document.getElementById("nomTitre").innerHTML = imDescription[noImage-1]["titre"];
+	document.getElementById("nouveauTitre").innerHTML = imDescription[noImage-1]["nouveauTitre"];
+	document.getElementById(id).style.border="5px double #20107e";
 }
 
 function afficher()/*cette fonction sert à afficher les images */
 {
     document.getElementById(id).style.border="none"; 
     id = this.id;
-    document.getElementById("persImg").src = "images/imagesVisionneuse/" + promotions[noImageCourant-1]["image"];
-	document.getElementById("nomTitre").innerHTML = promotions[noImageCourant-1]["titre"];
-	document.getElementById("nouveauTitre").innerHTML = promotions[noImageCourant-1]["nouveauTitre"];
-    document.getElementById(id).style.border="5px double #fcc32c";
+    document.getElementById("persImg").src = "{{site.baseurl}}/assets/piv/" + imDescription[noImageCourant-1]["image"];
+	document.getElementById("nomTitre").innerHTML = imDescription[noImageCourant-1]["titre"];
+	document.getElementById("nouveauTitre").innerHTML = imDescription[noImageCourant-1]["nouveauTitre"];
+    document.getElementById(id).style.border="5px double #20107e";
 	
    for(i = 1; i <= 11; i++)/*pour aller d'une image à une autre*/
    {
