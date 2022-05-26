@@ -4,3 +4,17 @@ candy:
   paths: [
     https://github.com/CQEN-QDCE/Candy/blob/main/README.md
   ]
+
+   Digital_marketplace:
+  project-title: Digital Marketplace
+  url: https://github.com/CQEN-QDCE/digital_marketplace.git
+  paths: [
+    https://github.com/CQEN-QDCE/digital_marketplace/blob/experimentation/README.md
+  ]
+
+  pia:
+  project-title: Pia
+  url: https://github.com/CQEN-QDCE/pia.git
+  paths: [
+    https://github.com/CQEN-QDCE/pia/blob/master/README.md
+  ]
