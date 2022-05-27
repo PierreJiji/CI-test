@@ -50,7 +50,7 @@ def create_index(path, repoName, projectTitle, url, description, repoDate)
     "title: #{projectTitle}\n" +
     "layout: index-lab\n" +
     "project: #{repoName}\n" +
-    "permalink: documentation-labs/#{repoName.gsub(' ', '-')}/\n" +
+    "permalink: documentation-labs/#{repoName.gsub(' ', '-')}/index.html\n" +
     "index: true\n" +
     "github: #{url}\n" +
     "date: #{repoDate}\n" +
