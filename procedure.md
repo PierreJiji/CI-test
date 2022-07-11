@@ -6,7 +6,7 @@ https://platoniq.github.io/decidim-install/decidim-focal/
  - sudo apt upgrade
  - sudo apt autoremove
 
-# Maintenant, installons ruby, en utilisant la méthode rbenv .
+# Installez ruby, en utilisant la méthode rbenv .
  - git clone https://github.com/rbenv/rbenv.git ~/.rbenv
  - echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
  - echo 'eval "$(rbenv init -)"' >> ~/.bashrc
