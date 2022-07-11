@@ -32,7 +32,7 @@ rbenv ()
     esac
 }-->
 
-# Il nous reste à installer ruby-build pour simplifier l'installation de ruby ​​:
+# installez ruby-build afin de simplifier l'installation de ruby ​​:
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 
 À ce stade, vous devriez être en mesure d'exécuter la commande rbenv install -l qui vous donnera toutes les versions de ruby ​​disponibles :
